@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionModel;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -27,6 +28,12 @@ public class Controller implements Initializable {
         nameField.clear();
         emailField.clear();
         numberField.clear();
+    }
+
+    public void onRemove(){
+        SelectionModel model = list.getSelectionModel();
+        Contact contact = (Contact) model.getSelectedItem();
+        contacts.remove(contact);
     }
 
     @Override

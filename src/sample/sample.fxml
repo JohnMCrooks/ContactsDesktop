@@ -15,7 +15,7 @@
             <TextField fx:id="numberField" minHeight="-Infinity" prefHeight="30.0" promptText="Phone Number" HBox.hgrow="ALWAYS" />
             <TextField fx:id="emailField" minHeight="-Infinity" prefHeight="30.0" promptText="Email" HBox.hgrow="ALWAYS" />
             <Button fx:id="addButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAdd" prefHeight="30.0" text="Add" />
-            <Button fx:id="removeButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" text="Remove" />
+            <Button fx:id="removeButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemove" prefHeight="30.0" text="Remove" />
          </children>
       </HBox>
       <ListView fx:id="list" prefHeight="435.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
