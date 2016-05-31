@@ -23,11 +23,17 @@ public class Controller implements Initializable {
     ListView list;
 
     public void onAdd(){
-        Contact contact = new Contact(nameField.getText(),emailField.getText(),numberField.getText());
-        contacts.add(contact);
-        nameField.clear();
-        emailField.clear();
-        numberField.clear();
+        if (nameField.getText() == "" || emailField.getText() == "" || numberField.getText() == ""){
+            System.out.println(nameField.getText()+ " - "+ emailField.getText() );
+            Contact contact = new Contact(nameField.getText(),emailField.getText(),numberField.getText());
+            contacts.add(contact);
+            nameField.clear();
+            emailField.clear();
+            numberField.clear();
+        }else  {
+            System.out.println(" You won't see this but You can't leave any fields blank!!! ");
+        }
+
     }
 
     public void onRemove(){
