@@ -63,19 +63,16 @@ public class Controller implements Initializable {
                 JsonParser parser = new JsonParser();
 
                 ArrayList<HashMap<String, String>> list = parser.parse(contents);               //data is parsed in as an ArrayList of Hashmaps for whatever reason
-                ObservableList<Contact> contacts = FXCollections.observableArrayList();         //We want the data to be added to an Observable Array list for use
-
+                //ObservableList<Contact> contacts = FXCollections.observableArrayList();         //We want the data to be added to an Observable Array list for use
                 for (HashMap<String, String> h: list){                                          //For every Hashmap in the Array List....
-                    contacts.add(new Contact(h.get("name"), h.get("email"), h.get("phone")));   //Create A Contact object with variables drawn from each of the Hashmap<Strings,Strings>
+                    contacts.add(new Contact(h.get("name"), h.get("email"), h.get("phone")));   //Create A Contact object with variables drawn from each of the 3 Hashmaps
                 }
                 return contacts;
-
             }catch (Exception e) {
                 e.printStackTrace();
                 return contacts;
             }
     }
-
 
     public void writeToFile(ObservableList<Contact> contacts) throws IOException {
         String fileName = "Contacts.json";
